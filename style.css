@@ -1,0 +1,35 @@
+    body {
+        background: #ffffff;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(125, 125, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    li a:hover {
+        background-color: #111;
+    }
+    
+    div.nav-bar {
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
