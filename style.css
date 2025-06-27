@@ -2,6 +2,59 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background: rgb(255, 232, 170);
+}
+@font-face {
+    font-family: 'grego' ;
+    src: url("Roman SD.ttf") format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+.titulo{
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'grego', Times, serif;
+    font-weight: normal;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulo h1{
+    font-size: 50px;
+}
+.titulo h2{
+    font-size: 25px;
+    text-align: center;
+    padding: 16px;
+}
+.text{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.text div{
+    margin: auto;
+    width: 40%;
+}
+.text h2{
+    font-family: 'grego', Times, serif;
+    font-weight: normal;
+    font-size: 40px;
+    padding: 16px;
+}
+.text h3, p{
+    font-size: 30px;
+    text-align: center;
+    padding: 8px;
+    text-align: left;
+}
 a {
     color: #ffffff;
     text-decoration: none;
@@ -23,11 +76,7 @@ nav{
     background: #615340;
     height: 8vh;
 }
-main{
-    background: url(background.jpeg)no-repeat center center;
-    background-size: cover;
-    height: 92vh;
-}
+
 .nav-list{
     list-style: none;
     display: flex;
