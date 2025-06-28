@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #222222;
+            --accent: #444444;
+            --text: #ffffff;
+            --highlight: #cccccc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 20px;
+        }
+        
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent);
+            border: none;
+            border-radius: 5px;
+            color: var(--text);
+            font-size: 16px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .service-option {
+            background-color: var(--accent);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .service-option:hover {
+            background-color: var(--highlight);
+            color: var(--primary);
+        }
+        
+        .service-option input {
+            margin-right: 10px;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--highlight);
+            color: var(--primary);
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--text);
+        }
+        
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form class="contact-form">
+        <h2 class="form-title">Formulário de Contato</h2>
+        
+        <div class="form-group">
+            <label for="name">1 - Qual é o seu nome?</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">2 - Informe seu Endereço de e-mail?</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">3 - Conta ai qual seu telefone/whatsapp?</label>
+            <input type="tel" id="phone" name="phone" value="+5521991141234" required>
+        </div>
+        
+        <div class="form-group">
+            <label>4 - Por qual serviço está procurando?</label>
+            <div class="services-grid">
+                <label class="service-option"><input type="checkbox" name="service" value="SEO"> SEO</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Criação de identidade Visual"> Criação de identidade Visual</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Mídias Sociais"> Mídias Sociais</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Comunicação Offline"> Comunicação Offline</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Tráfego Pago"> Tráfego Pago</label>
+                <label class="service-option"><input type="checkbox" name="service" value="E-mail Marketing"> E-mail Marketing</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Criação de Conteúdo"> Criação de Conteúdo</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Criação de Sites"> Criação de Sites</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Criação de Plataformas EAD"> Criação de Plataformas EAD</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Criação de Aplicativos"> Criação de Aplicativos</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Soluções Web Personalizadas"> Soluções Web Personalizadas</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Criação de Vídeos Institucionais"> Criação de Vídeos Institucionais</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Hospedagem de Sites"> Hospedagem de Sites</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Sistema ERP de gestão empresarial"> Sistema ERP</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Consultoria de vendas"> Consultoria de vendas</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Terceirização"> Terceirização</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Atendimento ao SAC"> Atendimento ao SAC</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Criação de mascote em 3D"> Mascote 3D</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Ilustração"> Ilustração</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Locução"> Locução</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Vinheta"> Vinheta</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Música comercial"> Música comercial</label>
+                <label class="service-option"><input type="checkbox" name="service" value="Outros"> Outros</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">Finalizar</button>
+    </form>
+</body>
+</html>
