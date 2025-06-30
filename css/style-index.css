@@ -7,7 +7,7 @@ body{
 }
 @font-face {
     font-family: 'grego' ;
-    src: url("Roman SD.ttf") format(truetype);
+    src: url("font/Roman\ SD.ttf") format(truetype);
     font-weight: normal;
     font-style: normal;
 }
@@ -62,18 +62,42 @@ body{
     color: black;
     transition: all 0.3s ease-in-out;
 }
-.painel-valores{
+.menu-animado{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #615340;
-    width: 100%;
-    height: 50vh;
-    gap: 3rem;
+    font-family: 'grego', Times, serif;
 }
-.btn-valores{
-    background: #ffffff;
-    padding: 30px;
+.animacoes{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+.animacoes p{
+    font-size: 25px;
+}
+.menu-animado h2{
+    font-size: 40px;
+    padding: 16px;
+}
+.animacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 30%;
+    padding: 20px;
+    border: 2px solid #615340;
+}
+.animacao img {
+    width: 150px;
+    height: 150px;
+    color: #615340;
+
 }
 .text div{
     margin: auto;
@@ -155,7 +179,27 @@ nav{
     }
     .mobile-menu {
         display: block;
-    } 
+    }
+}
+@media (max-width: 1600px){
+    .animacoes{
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+    }
+    .animacao{
+        width: calc(40% - 12px);
+    }    
+}
+@media screen and (max-width: 1150px) {
+    .animacao{
+        width: calc(50% - 12px);   
+    }
+}
+@media screen and (max-width: 900px) {
+    .animacao{
+        width: calc(100% - 12px);   
+    }
 }
 .nav-list.active{
     transform: translateX(0);
@@ -202,9 +246,8 @@ nav{
 }
 .footer-social-media{
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     gap: 3rem;
-
     align-items: center;
     justify-content: center;
 }
