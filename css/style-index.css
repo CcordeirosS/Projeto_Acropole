@@ -36,7 +36,16 @@ body{
     text-align: center;
     padding: 16px;
 }
-.text{
+.introduction {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+.text {
     width: 100%;
     display: flex;
     align-items: center;
@@ -44,9 +53,26 @@ body{
     flex-direction: column;
     font-family: 'Times New Roman', Times, serif;
 }
+.text div{
+    margin: auto;
+    width: 50%;
+}
+.sub-tittle{
+    font-family: 'grego', Times, serif;
+    font-weight: normal;
+    font-size: 40px;
+    padding: 16px;
+    text-align: center;
+}
+.paragraph{
+    font-size: 27px;
+    padding: 8px;
+    text-align: left;
+    font-family: system-ui, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .btn-contato{
     width: 60vh;
-    height: 8vh;
+    height: 4vh;
     border: none;
     border-radius: 20px;
     font-size: 35px;
@@ -56,6 +82,7 @@ body{
     color: #ffffff;
     cursor: pointer;
     margin: 30px;
+    text-align: center;
 }
 .btn-contato:hover{
     background-color: #ffffff;
@@ -63,57 +90,39 @@ body{
     transition: all 0.3s ease-in-out;
 }
 .menu-animado{
+    width: 70%;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     align-items: center;
     justify-content: center;
     font-family: 'grego', Times, serif;
+    margin: auto;
 }
 .animacoes{
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 24px;
-    margin-top: 32px;
+    margin: auto;
 }
 .animacoes p{
-    font-size: 25px;
+    font-size: 15px;
 }
 .menu-animado h2{
-    font-size: 40px;
+    font-size: 30px;
     padding: 16px;
+    text-align: center;
 }
 .animacao{
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 20px;
-    gap: 18px;
-    width: 30%;
-    padding: 20px;
     border: 2px solid #615340;
+    margin-top: 20px;
 }
 .animacao img {
     width: 150px;
     height: 150px;
-    color: #615340;
-
-}
-.text div{
-    margin: auto;
-    width: 40%;
-}
-.text h2{
-    font-family: 'grego', Times, serif;
-    font-weight: normal;
-    font-size: 40px;
-    padding: 16px;
-}
-.text h3, p{
-    font-size: 30px;
-    text-align: center;
-    padding: 8px;
-    text-align: left;
 }
 a {
     color: #ffffff;
@@ -259,4 +268,98 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.painel-clientes{
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+}
+.clientes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+.clientes-img{
+    width: 200px;
+    height: 160px;
+}
+.logo12{
+    width: 60vh;
+    height: 160px;
+}
+.logo14-18{
+    border-radius: 20px;
+    border: 3px solid #615340;
+    width: 200px;
+    height: 160px;
+}
+.logo16{
+    background: #1c2f85;
+    width: 200px;
+    height: 160px;
+    border-radius: 20px;
+    border: 3px solid #000000;
+}
+.painel-clientes h2{
+    font-family: 'grego', Times, serif;
+    font-size: 40px;
+}
+@media screen and (max-width: 768px) {
+    .introduction, .text div, .menu-animado .animacoes {
+        width: 90% !important;
+    }
+
+    .btn-contato {
+        width: 90%;
+        font-size: 20px;
+        height: auto;
+        padding: 12px;
+    }
+
+    .sub-tittle {
+        font-size: 30px;
+    }
+
+    .paragraph {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .painel h1 {
+        font-size: 32px;
+    }
+
+    .painel h2 {
+        font-size: 20px;
+    }
+
+    .clientes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .clientes-img, .logo12 {
+        width: 40vw;
+        height: auto;
+        margin: 10px;
+    }
+
+    .footer {
+        height: auto;
+        padding: 20px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+
+    .footer-social-media {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
