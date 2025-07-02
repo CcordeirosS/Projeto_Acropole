@@ -39,4 +39,28 @@ const mobileNavbar = new MobileNavbar(
     ".nav-list",
     ".nav-list li"
 );
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('phone').value;
+
+    const servicosSelecionados = Array.from(document.querySelectorAll('input[name="service"]:checked'))
+      .map(el => el.value)
+      .join(', ');
+
+    const mensagem = `Olá, estou interessado nos seus serviços!%0A
+Meu nome é: ${nome}%0A
+E estou interessado nos seguintes serviços: ${servicosSelecionados}`;
+
+    const numeroDestino = '5592985490996';
+    const url = `https://wa.me/${numeroDestino}?text=${mensagem}`;
+
+    window.open(url, '_blank');
+  });
+});
+
 mobileNavbar.init();
