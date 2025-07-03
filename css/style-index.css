@@ -3,13 +3,16 @@
     padding: 0;
 }
 body{
-    background: rgb(255, 232, 170);
+    background: rgb(252, 239, 204);
 }
 @font-face {
     font-family: 'grego' ;
     src: url("font/Roman\ SD.ttf") format(truetype);
     font-weight: normal;
     font-style: normal;
+}
+li{
+    list-style: none;
 }
 .titulo{
     position:absolute;
@@ -45,6 +48,9 @@ body{
     margin: auto;
     font-family: 'Times New Roman', Times, serif;
 }
+.introduction h3{
+    color: #ff9100;
+}
 .text {
     width: 100%;
     display: flex;
@@ -63,6 +69,7 @@ body{
     font-size: 40px;
     padding: 16px;
     text-align: center;
+    color: #ff9100;
 }
 .paragraph{
     font-size: 27px;
@@ -75,7 +82,7 @@ body{
     height: 4vh;
     border: none;
     border-radius: 20px;
-    font-size: 35px;
+    font-size: 30px;
     text-transform: uppercase;
     letter-spacing: 4px;
     background-color: #615340;
@@ -88,42 +95,6 @@ body{
     background-color: #ffffff;
     color: black;
     transition: all 0.3s ease-in-out;
-}
-.menu-animado{
-    width: 70%;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'grego', Times, serif;
-    margin: auto;
-}
-.animacoes{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-}
-.animacoes p{
-    font-size: 15px;
-    margin-top: 10px;
-}
-.menu-animado h2{
-    font-size: 30px;
-    text-align: center;
-    padding: 16px;
-}
-.animacao{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    border: 2px solid #615340;
-    margin-top: 20px;
-}
-.animacao img {
-    width: 150px;
-    height: 150px;
 }
 a {
     color: #ffffff;
@@ -270,45 +241,6 @@ nav{
     align-items: center;
     justify-content: center;
 }
-.painel-clientes{
-    margin-top: 12vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    text-align: center;
-}
-.clientes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-}
-.clientes-img{
-    width: 200px;
-    height: 160px;
-}
-.logo12{
-    width: 60vh;
-    height: 160px;
-}
-.logo14-18{
-    border-radius: 20px;
-    border: 3px solid #615340;
-    width: 200px;
-    height: 160px;
-}
-.logo16{
-    background: #1c2f85;
-    width: 200px;
-    height: 160px;
-    border-radius: 20px;
-    border: 3px solid #000000;
-}
-.painel-clientes h2{
-    font-family: 'grego', Times, serif;
-    font-size: 40px;
-}
 @media screen and (max-width: 768px) {
     .introduction, .text div, .menu-animado .animacoes {
         width: 90% !important;
@@ -363,4 +295,227 @@ nav{
         flex-wrap: wrap;
         gap: 1rem;
     }
+}
+.carousel-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: auto;
+  margin-top: 15px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 50%;
+  height: 50%;
+}
+
+.slide {
+  min-width: 100%;
+  transition: opacity 1s;
+}
+.slide-12{
+    width: 90%;
+    min-width: 100%;
+    transition: opacity 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide img {
+    width: 25vh;
+    height: 20vh;
+    display: block;
+}
+.slide-14-18{
+    border-radius: 20px;
+    border: 3px solid #615340;
+}
+.slide-16{
+    background: #1c2f85;
+    border-radius: 20px;
+    border: 3px solid #000000;
+}
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+@media (max-width: 600px) {
+  .nav {
+    font-size: 1.5rem;
+    padding: 0.3rem;
+  }
+  .slide img{
+    width: 15vh;
+    height: 10vh;
+  }
+}
+.slider-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  max-width: 1000px;
+  border-radius: 10px;
+  position: relative;
+  height: 15vh;
+}
+
+.slider-scroll {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 1rem;
+  animation: infiniteScroll 9s linear infinite;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  width: 20vh;
+}
+
+.scroll-item img {
+  width: 20vh;
+  border-radius: 10px;
+  height: 15vh;
+}
+
+/* Animação infinita horizontal */
+@keyframes infiniteScroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-1187px);
+    }
+}
+
+/* Pausar ao passar o mouse */
+.slider-scroll-container:hover .scroll-track {
+  animation-play-state: paused;
+}
+/* Botão flutuante */
+.open-popup-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.open-popup-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.popup h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.popup input, .popup label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.popup input[type="text"],
+.popup input[type="email"],
+.popup input[type="tel"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup .checkbox-group {
+  margin-bottom: 10px;
+}
+
+.popup .checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.popup .checkbox-group input {
+  margin-right: 10px;
+}
+
+.popup button {
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #25D366;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.popup button:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.02);
+}
+
+.popup .close-btn {
+  background-color: #e74c3c;
+  margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  .popup {
+    padding: 15px;
+  }
 }

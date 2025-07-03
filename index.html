@@ -28,6 +28,32 @@
             </ul>
         </nav>
     </header>
+    <!-- Botão flutuante para abrir o pop-up -->
+    <button class="open-popup-btn" onclick="openPopup()">Solicitar Orçamento</button>
+
+    <!-- Pop-up com formulário -->
+    <div class="popup" id="popupForm">
+    <h2>Solicite um Orçamento</h2>
+    <form id="whatsappForm">
+      <input type="text" id="nome" placeholder="Seu nome" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="tel" id="telefone" placeholder="Telefone" required />
+
+      <div class="checkbox-group">
+        <strong>Serviços de interesse:</strong>
+        <label><input type="checkbox" value="Design" /> Design</label>
+        <label><input type="checkbox" value="Gestão de Redes Sociais" /> Gestão de Redes Sociais</label>
+        <label><input type="checkbox" value="Criação de Sites / E-commerce / Landing Page" /> Criação de Site Institucional, E-commerce e Landing Page</label>
+        <label><input type="checkbox" value="Tráfego Pago" /> Tráfego Pago</label>
+        <label><input type="checkbox" value="Desenvolvimento de Sistemas e Apps" /> Dev Sistema e App</label>
+        <label><input type="checkbox" value="Consultoria" /> Consultoria</label>
+        <label><input type="checkbox" value="Marketing Político" /> Marketing Político</label>
+      </div>
+
+      <button type="submit">Enviar para WhatsApp</button>
+      <button type="button" class="close-btn" onclick="closePopup()">Fechar</button>
+    </form>
+    </div>
     <main>
         <article>
             <section>
@@ -43,17 +69,9 @@
                 <div class="introduction">
                     <h2 class="sub-tittle">QUEM SOMOS?</h2>
                     <h3 class="paragraph">Acrópole Soluções Digitais LTDA</h3>
-                    <p class="paragraph">
-                        Especialistas em estratégias digitais sob medida para portais de notícia e turismo.
-                        Mais do que uma agência, somos parceiros na sua transformação digital.
-                    </p>
-                    <h3 class="paragraph">Objetivo:</h3>
-                    <p class="paragraph">
-                        Impulsionar o alcance e o impacto de veículos jornalísticos através da
-                        tecnologia, SEO e performance. Ser referência em transformação digital de
-                        empresas, especialmente no turismo nacional.
-                    </p>
-                    <a class="btn-contato" href="pag-contato.html">Pronto para crescer?</a>
+                    <p class="paragraph">No cenário cada vez mais digital e competitivo em que vivemos, marcar presença online com estratégia, criatividade e inovação não é mais uma opção, é uma necessidade. A Acrópole Digital nasce com essa missão: ser o alicerce das marcas no universo digital, construindo resultados sólidos e duradouros. Somos uma empresa de marketing digital focada em conectar marcas ao seu público de forma eficiente, criativa e estratégica.</p>
+                    <button class="btn-contato" onclick="openPopup()">Pronto para crescer?</button>
+                    <p class="paragraph">A Acrópole Digital é mais do que uma agência de marketing, somos parceiros no crescimento do seu negócio. Unimos criatividade, tecnologia e estratégia para transformar ideias em resultados reais. Se você busca posicionar sua marca com força e inteligência no mundo digital, conte com a Acrópole. Estamos prontos para construir o seu sucesso, do alicerce ao topo.</p>
                 </div>
             </section>
             <section>
@@ -75,59 +93,52 @@
                 </div>
             </section>
             <section>
-                <div class="menu-animado">
-                    <h2>Conheça nossos valores</h2>
-                    <div class="animacoes">
-                        <div class="animacao">
-                            <p>Personalização</p>
-                            <img src="img/personalizacao.gif" alt="Personalização">
-                        </div>
-                        <div class="animacao">
-                            <p>Inovação</p>
-                            <img src="img/ideia.gif" alt="Inovação">
-                        </div>
-                        <div class="animacao">
-                            <p>Qualidade</p>
-                            <img src="img/book.gif" alt="Qualidade">
-                        </div>
-                        <div class="animacao">
-                            <p>Integridade</p>
-                            <img src="img/integridade.gif" alt="Integridade">
-                        </div>
-                        <div class="animacao">
-                            <p>Colaboração</p>
-                            <img src="img/colaboracao.gif" alt="Colaboração">
-                        </div>
-                        <div class="animacao">
-                            <p>Excelência</p>
-                            <img src="img/execelencia.gif" alt="Excelência">
+                <h2 class="sub-tittle">Conheça nossos valores</h2>
+                <div class="slider-scroll-container">
+                    <div class="slider-scroll" id="slider2">
+                        <div class="scroll-track">
+                            <div class="scroll-item"><img src="img/ideia.gif" alt="1"></div>
+                            <div class="scroll-item"><img src="img/integridade.gif" alt="2"></div>
+                            <div class="scroll-item"><img src="img/execelencia.gif" alt="3"></div>
+                            <div class="scroll-item"><img src="img/book.gif" alt="4"></div>
+                            <div class="scroll-item"><img src="img/colaboracao.gif" alt="5"></div>
+                            <div class="scroll-item"><img src="img/personalizacao.gif" alt="6"></div>
+
+                            <div class="scroll-item"><img src="img/ideia.gif" alt="1"></div>
+                            <div class="scroll-item"><img src="img/integridade.gif" alt="2"></div>
+                            <div class="scroll-item"><img src="img/execelencia.gif" alt="3"></div>
+                            <div class="scroll-item"><img src="img/book.gif" alt="4"></div>
+                            <div class="scroll-item"><img src="img/colaboracao.gif" alt="5"></div>
+                            <div class="scroll-item"><img src="img/personalizacao.gif" alt="6"></div>
                         </div>
                     </div>
                 </div>
             </section>
             <section>
-                <div class="painel-clientes">
-                    <h2>Nossos Clientes</h2>
-                    <div class="clientes">
-                        <img src="img/logo1.png" class="clientes-img" alt="Cliente 1">
-                        <img src="img/logo2.webp" class="clientes-img" alt="Cliente 2">
-                        <img src="img/logo3.png" class="clientes-img" alt="Cliente 3">
-                        <img src="img/logo4.png" class="clientes-img" alt="Cliente 4">
-                        <img src="img/logo5.webp" class="clientes-img" alt="Cliente 5">
-                        <img src="img/logo6.png" class="clientes-img" alt="Cliente 6">
-                        <img src="img/logo7.png" class="clientes-img" alt="Cliente 7">
-                        <img src="img/logo8.png" class="clientes-img" alt="Cliente 8">
-                        <img src="img/logo9.png" class="clientes-img" alt="Cliente 9">
-                        <img src="img/logo10.png" class="clientes-img" alt="Cliente 10">
-                        <img src="img/logo11.png" class="clientes-img" alt="Cliente 11">
-                        <img src="img/logo12.webp" class="logo12" alt="Cliente 12">
-                        <img src="img/logo13.png" class="clientes-img" alt="Cliente 13">
-                        <img src="img/logo14.webp" class="logo14-18" alt="Cliente 14">
-                        <img src="img/logo15.png" class="clientes-img" alt="Cliente 15">
-                        <img src="img/logo16.png" class="logo16" alt="Cliente 16">
-                        <img src="img/logo17.png" class="clientes-img" alt="Cliente 17">
-                        <img src="img/logo18.jpg" class="logo14-18" alt="Cliente 18">
+                <h2 class="sub-tittle">Conheça Nossos Clientes</h2>
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel">
+                        <div class="slide"><img src="img/logo1.png" alt="Slide 1"></div>
+                        <div class="slide"><img src="img/logo2.webp" alt="Slide 2"></div>
+                        <div class="slide"><img src="img/logo3.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo4.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo5.webp" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo6.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo7.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo8.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo9.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo10.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo11.png" alt="Slide 3"></div>
+                        <div class="slide-12"><img class="slide-12" src="img/logo12.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo13.png" alt="Slide 3"></div>
+                        <div class="slide"><img class="slide-14-18" src="img/logo14.webp" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo15.png" alt="Slide 3"></div>
+                        <div class="slide"><img class="slide-16" src="img/logo16.png" alt="Slide 3"></div>
+                        <div class="slide"><img src="img/logo17.png" alt="Slide 3"></div>
+                        <div class="slide"><img class="slide-14-18" src="img/logo18.jpg" alt="Slide 3"></div>
                     </div>
+                    <button class="nav prev" onclick="prevSlide()">&#10094;</button>
+                    <button class="nav next" onclick="nextSlide()">&#10095;</button>
                 </div>
             </section>
         </article>

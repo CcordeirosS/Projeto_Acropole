@@ -40,27 +40,69 @@ const mobileNavbar = new MobileNavbar(
     ".nav-list li"
 );
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
-    e.preventDefault();
+const popup = document.getElementById('popupForm');
 
-    const nome = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const telefone = document.getElementById('phone').value;
+function openPopup() {
+  popup.style.display = 'block';
+}
 
-    const servicosSelecionados = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-      .map(el => el.value)
-      .join(', ');
+function closePopup() {
+  popup.style.display = 'none';
+}
 
-    const mensagem = `Olá, estou interessado nos seus serviços!%0A
-Meu nome é: ${nome}%0A
-E estou interessado nos seguintes serviços: ${servicosSelecionados}`;
+document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-    const numeroDestino = '5592985490996';
-    const url = `https://wa.me/${numeroDestino}?text=${mensagem}`;
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const telefone = document.getElementById('telefone').value.trim();
+  const checkboxes = document.querySelectorAll('.checkbox-group input:checked');
 
-    window.open(url, '_blank');
-  });
+  let servicos = [];
+  checkboxes.forEach(cb => servicos.push(cb.value));
+
+  const mensagem = `Olá, meu nome é ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AEstou interessado nos seguintes serviços:%0A- ${servicos.join('%0A- ')}`;
+
+  const numeroWhatsApp = '5599999999999'; // Substitua pelo número com DDD e código do país
+  const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+
+  window.open(url, '_blank');
 });
 
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const carousel = document.getElementById('carousel');
+
+function showSlide(index) {
+  if (index < 0) currentIndex = totalSlides - 1;
+  else if (index >= totalSlides) currentIndex = 0;
+  else currentIndex = index;
+
+  const offset = -currentIndex * 100;
+  carousel.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+  showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
+
+// Auto play
+let autoPlay = setInterval(nextSlide, 4000); // 4 segundos
+
+// Pausar ao passar o mouse (opcional)
+document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
+  clearInterval(autoPlay);
+});
+
+document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
+  autoPlay = setInterval(nextSlide, 4000);
+});
+
+// Iniciar com o primeiro slide
+showSlide(currentIndex);
 mobileNavbar.init();

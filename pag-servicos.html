@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acrópole Soluções Digitais - Nossos Serviços</title>
+    <style>
+        :root {
+            --azul-escuro: #1a2a57;
+            --azul-medio: #2a4a9a;
+            --azul-claro: #3a6ad7;
+            --laranja: #f7941d;
+            --branco: #ffffff;
+            --cinza-claro: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--azul-escuro);
+            line-height: 1.6;
+            background-color: var(--cinza-claro);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .servicos-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        .servicos-header h1 {
+            color: var(--azul-escuro);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .servicos-header h2 {
+            color: var(--laranja);
+            font-size: 2rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Navegação entre serviços */
+        .servicos-navegacao {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .servico-link {
+            padding: 12px 25px;
+            background-color: var(--branco);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--azul-escuro);
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--azul-medio);
+        }
+        
+        .servico-link:hover, .servico-link.ativo {
+            background-color: var(--azul-medio);
+            color: var(--branco);
+        }
+        
+        /* Páginas de serviços individuais */
+        .pagina-servico {
+            background-color: var(--branco);
+            border-radius: 25px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+        
+        .pagina-servico.ativo {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .servico-titulo {
+            color: var(--azul-medio);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .servico-descricao {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .servico-detalhes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .servico-beneficios, .servico-processo {
+            background-color: var(--cinza-claro);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        
+        .servico-beneficios h3, .servico-processo h3 {
+            color: var(--laranja);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .servico-beneficios h3::before {
+            content: "✓";
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .servico-processo h3::before {
+            content: "➔";
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .servico-beneficios ul, .servico-processo ol {
+            padding-left: 25px;
+        }
+        
+        .servico-beneficios li, .servico-processo li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        
+        .servico-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .servico-btn {
+            display: inline-block;
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(247, 148, 29, 0.3);
+        }
+        
+        .servico-btn:hover {
+            background-color: var(--azul-claro);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(58, 106, 215, 0.3);
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .servico-detalhes {
+                grid-template-columns: 1fr;
+            }
+            
+            .servicos-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .servicos-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .pagina-servico {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="servicos-header">
+            <h1>NOSSOS SERVIÇOS ESPECIALIZADOS</h1>
+            <h2>Soluções completas para impulsionar seu negócio no ambiente digital</h2>
+        </div>
+        
+        <div class="servicos-navegacao">
+            <a href="#design" class="servico-link ativo">Design</a>
+            <a href="#redes-sociais" class="servico-link">Gestão de Redes Sociais</a>
+            <a href="#criacao-sites" class="servico-link">Criação de Sites</a>
+            <a href="#trafico-pago" class="servico-link">Tráfego Pago</a>
+            <a href="#dev-apps" class="servico-link">Desenvolvimento de Apps</a>
+            <a href="#consultoria" class="servico-link">Consultoria</a>
+            <a href="#marketing-politico" class="servico-link">Marketing Político</a>
+        </div>
+        
+        <!-- Design -->
+        <div id="design" class="pagina-servico ativo">
+            <h2 class="servico-titulo">Design Profissional</h2>
+            <p class="servico-descricao">Criamos identidades visuais impactantes que comunicam a essência da sua marca e conquistam seu público-alvo.</p>
+            
+            <div class="servico-detalhes">
+                <div class="servico-beneficios">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li>Identidade visual única e memorável</li>
+                        <li>Designs alinhados com sua estratégia de negócios</li>
+                        <li>Materiais gráficos profissionais para todos os canais</li>
+                        <li>Consistência visual em todas as plataformas</li>
+                        <li>Aumento do reconhecimento da marca</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-processo">
+                    <h3>Nosso Processo</h3>
+                    <ol>
+                        <li>Briefing e entendimento da marca</li>
+                        <li>Pesquisa de mercado e referências</li>
+                        <li>Criação de conceitos e direção artística</li>
+                        <li>Desenvolvimento da identidade visual</li>
+                        <li>Entrega dos manuais e arquivos finais</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="servico-cta">
+                <a href="#contato" class="servico-btn">Quero um design exclusivo</a>
+            </div>
+        </div>
+        
+        <!-- Gestão de Redes Sociais -->
+        <div id="redes-sociais" class="pagina-servico">
+            <h2 class="servico-titulo">Gestão de Redes Sociais</h2>
+            <p class="servico-descricao">Administramos suas redes sociais com estratégias personalizadas para engajar seu público e fortalecer sua marca.</p>
+            
+            <div class="servico-detalhes">
+                <div class="servico-beneficios">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li>Aumento do engajamento e seguidores</li>
+                        <li>Conteúdo relevante e estratégico</li>
+                        <li>Gestão profissional de comunidades</li>
+                        <li>Relatórios mensais de desempenho</li>
+                        <li>Estratégias para cada plataforma (Instagram, LinkedIn, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-processo">
+                    <h3>Nosso Processo</h3>
+                    <ol>
+                        <li>Análise do perfil atual e concorrência</li>
+                        <li>Definição de persona e tom de voz</li>
+                        <li>Criação de calendário editorial</li>
+                        <li>Produção e publicação de conteúdo</li>
+                        <li>Monitoramento e otimização contínua</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="servico-cta">
+                <a href="#contato" class="servico-btn">Quero melhorar minhas redes sociais</a>
+            </div>
+        </div>
+        
+        <!-- Criação de Sites -->
+        <div id="criacao-sites" class="pagina-servico">
+            <h2 class="servico-titulo">Criação de Sites Institucionais, E-commerce e Landing Pages</h2>
+            <p class="servico-descricao">Desenvolvemos sites otimizados, responsivos e com alta conversão para diversos objetivos de negócio.</p>
+            
+            <div class="servico-detalhes">
+                <div class="servico-beneficios">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li>Sites totalmente responsivos (mobile first)</li>
+                        <li>Otimizados para SEO desde o lançamento</li>
+                        <li>Designs exclusivos e funcionais</li>
+                        <li>Integração com ferramentas de marketing</li>
+                        <li>Treinamento para gestão do conteúdo</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-processo">
+                    <h3>Nosso Processo</h3>
+                    <ol>
+                        <li>Definição de objetivos e requisitos</li>
+                        <li>Criação de wireframes e protótipos</li>
+                        <li>Desenvolvimento do design UI/UX</li>
+                        <li>Programação e implementação</li>
+                        <li>Testes e lançamento</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="servico-cta">
+                <a href="#contato" class="servico-btn">Quero um site profissional</a>
+            </div>
+        </div>
+        
+        <!-- Tráfego Pago -->
+        <div id="trafico-pago" class="pagina-servico">
+            <h2 class="servico-titulo">Gestão de Tráfego Pago</h2>
+            <p class="servico-descricao">Maximizamos seu ROI com campanhas inteligentes em Google Ads, Meta Ads, TikTok Ads e outras plataformas.</p>
+            
+            <div class="servico-detalhes">
+                <div class="servico-beneficios">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li>Segmentação precisa do público-alvo</li>
+                        <li>Criação de campanhas altamente otimizadas</li>
+                        <li>Acompanhamento diário de desempenho</li>
+                        <li>Relatórios transparentes de resultados</li>
+                        <li>Maximização do retorno sobre investimento</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-processo">
+                    <h3>Nosso Processo</h3>
+                    <ol>
+                        <li>Definição de objetivos e KPIs</li>
+                        <li>Pesquisa de palavras-chave e audiência</li>
+                        <li>Criação de campanhas e anúncios</li>
+                        <li>Otimização contínua baseada em dados</li>
+                        <li>Análise de resultados e ajustes</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="servico-cta">
+                <a href="#contato" class="servico-btn">Quero mais resultados com tráfego pago</a>
+            </div>
+        </div>
+        
+        <!-- Desenvolvimento de Sistemas e Apps -->
+        <div id="dev-apps" class="pagina-servico">
+            <h2 class="servico-titulo">Desenvolvimento de Sistemas e Aplicativos</h2>
+            <p class="servico-descricao">Criamos soluções tecnológicas personalizadas para automatizar processos e melhorar sua operação.</p>
+            
+            <div class="servico-detalhes">
+                <div class="servico-beneficios">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li>Soluções sob medida para suas necessidades</li>
+                        <li>Desenvolvimento ágil e eficiente</li>
+                        <li>Interfaces intuitivas e fáceis de usar</li>
+                        <li>Integração com outros sistemas</li>
+                        <li>Suporte e manutenção contínua</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-processo">
+                    <h3>Nosso Processo</h3>
+                    <ol>
+                        <li>Levantamento de requisitos detalhado</li>
+                        <li>Proposta de arquitetura e tecnologia</li>
+                        <li>Desenvolvimento em sprints</li>
+                        <li>Testes e validações</li>
+                        <li>Implantação e treinamento</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="servico-cta">
+                <a href="#contato" class="servico-btn">Quero desenvolver uma solução personalizada</a>
+            </div>
+        </div>
+        
+        <!-- Consultoria -->
+        <div id="consultoria" class="pagina-servico">
+            <h2 class="servico-titulo">Consultoria em Marketing Digital</h2>
+            <p class="servico-descricao">Diagnóstico completo e plano de ação para alavancar sua presença digital com estratégias comprovadas.</p>
+            
+            <div class="servico-detalhes">
+                <div class="servico-beneficios">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li>Análise completa do cenário digital</li>
+                        <li>Plano de ação com prioridades definidas</li>
+                        <li>Orientação para implementação</li>
+                        <li>Métricas e indicadores de sucesso</li>
+                        <li>Visão estratégica de especialistas</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-processo">
+                    <h3>Nosso Processo</h3>
+                    <ol>
+                        <li>Diagnóstico inicial detalhado</li>
+                        <li>Análise de concorrência e mercado</li>
+                        <li>Definição de estratégias prioritárias</li>
+                        <li>Elaboração do plano de ação</li>
+                        <li>Acompanhamento na implementação</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="servico-cta">
+                <a href="#contato" class="servico-btn">Quero uma consultoria especializada</a>
+            </div>
+        </div>
+        
+        <!-- Marketing Político -->
+        <div id="marketing-politico" class="pagina-servico">
+            <h2 class="servico-titulo">Marketing Político Digital</h2>
+            <p class="servico-descricao">Estratégias digitais completas para campanhas eleitorais eficientes e dentro da legislação.</p>
+            
+            <div class="servico-detalhes">
+                <div class="servico-beneficios">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li>Gestão de imagem e reputação online</li>
+                        <li>Campanhas digitais dentro da lei eleitoral</li>
+                        <li>Estratégias de engajamento com eleitores</li>
+                        <li>Monitoramento de redes sociais</li>
+                        <li>Relatórios de desempenho e percepção</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-processo">
+                    <h3>Nosso Processo</h3>
+                    <ol>
+                        <li>Definição de posicionamento e mensagens</li>
+                        <li>Planejamento de conteúdo multiplataforma</li>
+                        <li>Gestão de comunidades e interações</li>
+                        <li>Monitoramento de concorrentes</li>
+                        <li>Análise de dados e ajustes estratégicos</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="servico-cta">
+                <a href="#contato" class="servico-btn">Quero estratégias para minha campanha</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navegação entre serviços
+        document.querySelectorAll('.servico-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove classe ativo de todos os links
+                document.querySelectorAll('.servico-link').forEach(el => {
+                    el.classList.remove('ativo');
+                });
+                
+                // Adiciona classe ativo ao link clicado
+                this.classList.add('ativo');
+                
+                // Esconde todas as páginas de serviço
+                document.querySelectorAll('.pagina-servico').forEach(pagina => {
+                    pagina.classList.remove('ativo');
+                });
+                
+                // Mostra a página correspondente
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).classList.add('ativo');
+            });
+        });
+    </script>
+</body>
+</html>
