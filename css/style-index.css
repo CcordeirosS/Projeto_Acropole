@@ -88,8 +88,8 @@ li{
     background-color: #615340;
     color: #ffffff;
     cursor: pointer;
-    margin: 30px;
     text-align: center;
+    margin: 20px auto
 }
 .btn-contato:hover{
     background-color: #ffffff;
@@ -375,8 +375,10 @@ nav{
   overflow: hidden;
   max-width: 1000px;
   border-radius: 10px;
+  border: 3px solid #1c2f85;
   position: relative;
   height: 15vh;
+  margin: auto;
 }
 
 .slider-scroll {
@@ -420,7 +422,7 @@ nav{
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
+  background-color: #ff9100;
   color: white;
   padding: 15px 20px;
   border: none;
@@ -448,7 +450,6 @@ nav{
   transform: translate(-50%, -50%);
   z-index: 999;
   padding: 20px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
   animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -464,9 +465,8 @@ nav{
 }
 
 .popup input, .popup label {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+  display: flex;
+  margin: 10px auto;
 }
 
 .popup input[type="text"],
@@ -482,13 +482,13 @@ nav{
 }
 
 .popup .checkbox-group label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 .popup .checkbox-group input {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .popup button {
@@ -505,7 +505,6 @@ nav{
 }
 
 .popup button:hover {
-  background-color: #1ebe5d;
   transform: scale(1.02);
 }
 

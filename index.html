@@ -28,34 +28,31 @@
             </ul>
         </nav>
     </header>
-    <!-- Botão flutuante para abrir o pop-up -->
-    <button class="open-popup-btn" onclick="openPopup()">Solicitar Orçamento</button>
-
-    <!-- Pop-up com formulário -->
-    <div class="popup" id="popupForm">
-    <h2>Solicite um Orçamento</h2>
-    <form id="whatsappForm">
-      <input type="text" id="nome" placeholder="Seu nome" required />
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="tel" id="telefone" placeholder="Telefone" required />
-
-      <div class="checkbox-group">
-        <strong>Serviços de interesse:</strong>
-        <label><input type="checkbox" value="Design" /> Design</label>
-        <label><input type="checkbox" value="Gestão de Redes Sociais" /> Gestão de Redes Sociais</label>
-        <label><input type="checkbox" value="Criação de Sites / E-commerce / Landing Page" /> Criação de Site Institucional, E-commerce e Landing Page</label>
-        <label><input type="checkbox" value="Tráfego Pago" /> Tráfego Pago</label>
-        <label><input type="checkbox" value="Desenvolvimento de Sistemas e Apps" /> Dev Sistema e App</label>
-        <label><input type="checkbox" value="Consultoria" /> Consultoria</label>
-        <label><input type="checkbox" value="Marketing Político" /> Marketing Político</label>
-      </div>
-
-      <button type="submit">Enviar para WhatsApp</button>
-      <button type="button" class="close-btn" onclick="closePopup()">Fechar</button>
-    </form>
-    </div>
     <main>
         <article>
+            <section>
+                <button class="open-popup-btn" onclick="openPopup()"><i class="fa-brands fa-whatsapp fa-2xl"></i>  ENTRE EM CONTATO</button>
+                <div class="popup" id="popupForm">
+                    <h2>Entre em contato</h2>
+                    <form id="whatsappForm">
+                        <input type="text" id="nome" placeholder="Seu nome" required />
+                        <input type="email" id="email" placeholder="Email" required />
+                        <input type="tel" id="telefone" placeholder="Telefone" required />
+                        <div class="checkbox-group">
+                            <strong>Serviços de interesse:</strong>
+                            <label><input type="checkbox" value="Design" /> Design</label>
+                            <label><input type="checkbox" value="Gestão de Redes Sociais" /> Gestão de Redes Sociais</label>
+                            <label><input type="checkbox" value="Criação de Sites / E-commerce / Landing Page" /> Criação de Site Institucional, E-commerce e Landing Page</label>
+                            <label><input type="checkbox" value="Tráfego Pago" /> Tráfego Pago</label>
+                            <label><input type="checkbox" value="Desenvolvimento de Sistemas e Apps" /> Dev Sistema e App</label>
+                            <label><input type="checkbox" value="Consultoria" /> Consultoria</label>
+                            <label><input type="checkbox" value="Marketing Político" /> Marketing Político</label>
+                        </div>
+                        <button type="submit">Enviar para WhatsApp</button>
+                        <button type="button" class="close-btn" onclick="closePopup()">Fechar</button>
+                    </form>
+                </div>
+            </section>
             <section>
                 <div class="painel">
                     <img src="img/background.PNG" alt="Banner principal">
@@ -139,8 +136,10 @@
                     </div>
                     <button class="nav prev" onclick="prevSlide()">&#10094;</button>
                     <button class="nav next" onclick="nextSlide()">&#10095;</button>
+                    </div>
+                <div class="text">
+                    <button class="btn-contato" onclick="openPopup()">SEJA NOSSO CLIENTE</button>
                 </div>
-                <button class="btn-contato" onclick="openPopup()">SEJA NOSSO CLIENTE</button>
             </section>
         </article>
     </main>
