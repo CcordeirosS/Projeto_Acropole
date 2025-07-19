@@ -1,0 +1,322 @@
+/* Importação da fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #0056b3; /* Um azul mais escuro para botões e destaques */
+    --secondary-color: #007bff; /* Azul vibrante */
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --dark-gray: #6c757d;
+    --white: #ffffff;
+}
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header - Seção Hero */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1500x500?text=Fundo+de+Manaus') no-repeat center center/cover; /* Substitua com uma imagem de Manaus */
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Seções de Problema e Solução */
+.problem-solution-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 60px 20px;
+    background-color: var(--white);
+    gap: 30px;
+}
+
+.problem, .solution {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.problem h3, .solution h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Seção de Benefícios */
+.benefits-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--light-gray);
+}
+
+.benefits-section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.benefit-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-item h4 {
+    font-size: 1.4em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.benefits-section .cta-phrase {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: inline-block; /* Para o background se ajustar ao texto */
+}
+
+
+/* Seção do Formulário de CTA */
+.cta-form-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-form-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.cta-form-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Alinha o texto do formulário à esquerda */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Ajusta para padding interno */
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Aumenta um pouco o checkbox */
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Remove margem extra para alinhar */
+    color: var(--text-color);
+}
+
+
+.btn-submit {
+    background-color: #28a745; /* Um verde chamativo para o botão de CTA */
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+.direct-contact {
+    margin-top: 40px;
+    font-size: 1.1em;
+}
+
+.direct-contact p {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #eee;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-nav a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section h2 {
+        font-size: 1.5em;
+    }
+
+    .problem-solution-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .problem, .solution {
+        max-width: 90%;
+    }
+
+    .benefits-section h2 {
+        font-size: 2em;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-form-section h2 {
+        font-size: 2em;
+    }
+
+    .cta-form-section h3 {
+        font-size: 1.2em;
+    }
+
+    form {
+        padding: 25px;
+    }
+
+    .btn-submit {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section h2 {
+        font-size: 1.2em;
+    }
+
+    .problem h3, .solution h3 {
+        font-size: 1.5em;
+    }
+
+    .benefits-section .cta-phrase {
+        font-size: 1.3em;
+    }
+
+    .direct-contact p {
+        font-size: 1em;
+    }
+}

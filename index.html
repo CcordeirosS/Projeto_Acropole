@@ -13,100 +13,67 @@
 
 <body>
     <header>
-        <nav>
-            <a class="logo" href="/">Acrópole Digital</a>
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pag-contato.html">Contato</a></li>
-                <li><a href="/">Serviços</a></li>
-                <li><a href="/">Planos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="navbar">
+        <div class="logo">ACRÓPOLE DIGITAL</div>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="pag-servicos.html">Serviços</a>
+            <a onclick="openPopup()">Contato</a>
+            </nav>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </div>
+  </header>
     <main>
         <article>
-            <section>
-                <button class="open-popup-btn" onclick="openPopup()"><i class="fa-brands fa-whatsapp fa-2xl"></i>  ENTRE EM CONTATO</button>
-                <div class="popup" id="popupForm">
-                    <h2>Entre em contato</h2>
-                    <form id="whatsappForm">
-                        <input type="text" id="nome" placeholder="Seu nome" required />
-                        <input type="email" id="email" placeholder="Email" required />
-                        <input type="tel" id="telefone" placeholder="Telefone" required />
-                        <div class="checkbox-group">
-                            <strong>Serviços de interesse:</strong>
-                            <label><input type="checkbox" value="Design" /> Design</label>
-                            <label><input type="checkbox" value="Gestão de Redes Sociais" /> Gestão de Redes Sociais</label>
-                            <label><input type="checkbox" value="Criação de Sites / E-commerce / Landing Page" /> Criação de Site Institucional, E-commerce e Landing Page</label>
-                            <label><input type="checkbox" value="Tráfego Pago" /> Tráfego Pago</label>
-                            <label><input type="checkbox" value="Desenvolvimento de Sistemas e Apps" /> Dev Sistema e App</label>
-                            <label><input type="checkbox" value="Consultoria" /> Consultoria</label>
-                            <label><input type="checkbox" value="Marketing Político" /> Marketing Político</label>
-                        </div>
-                        <button type="submit">Enviar para WhatsApp</button>
-                        <button type="button" class="close-btn" onclick="closePopup()">Fechar</button>
-                    </form>
-                </div>
-            </section>
-            <section>
-                <div class="painel">
-                    <img src="img/background.PNG" alt="Banner principal">
+            <section class="sec1">
                     <div class="titulo">
                         <h1>MARKETING DIGITAL</h1>
                         <h2>INTELIGÊNCIA E ESTRATÉGIA</h2>
                     </div>
-                </div>
             </section>
-            <section>
-                <div class="introduction">
+            <section class="sec2">
                     <h2 class="sub-tittle">QUEM SOMOS?</h2>
-                    <h3 class="paragraph">Acrópole Soluções Digitais LTDA</h3>
+                    <h2 class="paragraph">ACRÓPOLE SOLUÇÕES DIGITAIS LTDA</h2>
                     <p class="paragraph">No cenário cada vez mais digital e competitivo em que vivemos, marcar presença online com estratégia, criatividade e inovação não é mais uma opção, é uma necessidade. A Acrópole Digital nasce com essa missão: ser o alicerce das marcas no universo digital, construindo resultados sólidos e duradouros. Somos uma empresa de marketing digital focada em conectar marcas ao seu público de forma eficiente, criativa e estratégica.</p>
                     <button class="btn-contato" onclick="openPopup()">Pronto para crescer?</button>
                     <p class="paragraph">A Acrópole Digital é mais do que uma agência de marketing, somos parceiros no crescimento do seu negócio. Unimos criatividade, tecnologia e estratégia para transformar ideias em resultados reais. Se você busca posicionar sua marca com força e inteligência no mundo digital, conte com a Acrópole. Estamos prontos para construir o seu sucesso, do alicerce ao topo.</p>
-                </div>
             </section>
             <section>
-                <div class="text"> 
-                    <div class="back-text">           
-                        <h2 class="sub-tittle">Porque escolher a Acrópole Digital?</h2>
-                        <h3 class="paragraph">O que você ganha com a gente:</h3>
-                        <ul class="paragraph">
-                            <li>Atendimento e serviços personalizados</li>
-                            <li>Estratégias exclusivas e validadas para o turismo Amazônico</li>
-                            <li>Redes sociais e sites que vendem o destino antes mesmo da conversa</li>
-                            <li>Visibilidade e reputação online</li>
-                            <li>Vendas com previsibilidade</li>
-                            <li>Suporte contínuo e orientação estratégica</li>
-                            <li>Site responsivo e otimizado para buscas orgânicas</li>
-                            <li>Gestão de tráfego pago altamente eficiente</li>
-                        </ul>
-                    </div>
+                <div class="sec3">
+                        <h1>POR QUE ESCOLHER A ACRÓPOLE?</h1>
+                        <h2>O que você ganha com a gente:</h2>
                 </div>
+            </section>
+            <section class="sec4">
+                <ul class="paragraph">
+                    <li>Atendimento e serviços personalizados</li>
+                    <li>Estratégias exclusivas e validadas para o turismo Amazônico</li>
+                    <li>Redes sociais e sites que vendem o destino antes mesmo da conversa</li>
+                    <li>Visibilidade e reputação online</li>
+                    <li>Vendas com previsibilidade</li>
+                    <li>Suporte contínuo e orientação estratégica</li>
+                    <li>Site responsivo e otimizado para buscas orgânicas</li>
+                    <li>Gestão de tráfego pago altamente eficiente</li>
+                </ul>
             </section>
             <section>
                 <h2 class="sub-tittle">Conheça nossos valores</h2>
                 <div class="slider-scroll-container">
                     <div class="slider-scroll" id="slider2">
                         <div class="scroll-track">
-                            <div class="scroll-item"><img src="img/ideia.gif" alt="1"></div>
-                            <div class="scroll-item"><img src="img/integridade.gif" alt="2"></div>
-                            <div class="scroll-item"><img src="img/execelencia.gif" alt="3"></div>
-                            <div class="scroll-item"><img src="img/book.gif" alt="4"></div>
-                            <div class="scroll-item"><img src="img/colaboracao.gif" alt="5"></div>
-                            <div class="scroll-item"><img src="img/personalizacao.gif" alt="6"></div>
+                            <div class="scroll-item"><img src="img/ideia.gif" alt="1"><p>Inovação</p></div>
+                            <div class="scroll-item"><img src="img/integridade.gif" alt="2"><p>Integridade</p></div>
+                            <div class="scroll-item"><img src="img/excelencia.gif" alt="3"><p>Excelencia</p.></div>
+                            <div class="scroll-item"><img src="img/book.gif" alt="4"><p>Qualidade</p></div>
+                            <div class="scroll-item"><img src="img/colaboracao.gif" alt="5"><p>Colaboração</p></div>
+                            <div class="scroll-item"><img src="img/personalizacao.gif" alt="6"><p>Personalização</p></div>
 
-                            <div class="scroll-item"><img src="img/ideia.gif" alt="1"></div>
-                            <div class="scroll-item"><img src="img/integridade.gif" alt="2"></div>
-                            <div class="scroll-item"><img src="img/execelencia.gif" alt="3"></div>
-                            <div class="scroll-item"><img src="img/book.gif" alt="4"></div>
-                            <div class="scroll-item"><img src="img/colaboracao.gif" alt="5"></div>
-                            <div class="scroll-item"><img src="img/personalizacao.gif" alt="6"></div>
+                            <div class="scroll-item"><img src="img/ideia.gif" alt="1"><p>Inovação</p></div>
+                            <div class="scroll-item"><img src="img/integridade.gif" alt="2"><p>Integridade</p></div>
+                            <div class="scroll-item"><img src="img/excelencia.gif" alt="3"><p>Excelencia</p.></div>
+                            <div class="scroll-item"><img src="img/book.gif" alt="4"><p>Qualidade</p></div>
+                            <div class="scroll-item"><img src="img/colaboracao.gif" alt="5"><p>Colaboração</p></div>
+                            <div class="scroll-item"><img src="img/personalizacao.gif" alt="6"><p>Personalização</p></div>
                         </div>
                     </div>
                 </div>
@@ -137,8 +104,31 @@
                     <button class="nav prev" onclick="prevSlide()">&#10094;</button>
                     <button class="nav next" onclick="nextSlide()">&#10095;</button>
                     </div>
-                <div class="text">
+                <div class="btn-contato-container">
                     <button class="btn-contato" onclick="openPopup()">SEJA NOSSO CLIENTE</button>
+                </div>
+            </section>
+            <section>
+                <button class="open-popup-btn" onclick="openPopup()"><i class="fa-brands fa-whatsapp fa-2xl"></i>  ENTRE EM CONTATO</button>
+                <div class="popup" id="popupForm">
+                    <h2>Entre em contato</h2>
+                    <form id="whatsappForm">
+                        <input type="text" id="nome" placeholder="Seu nome" required />
+                        <input type="email" id="email" placeholder="Email" required />
+                        <input type="tel" id="telefone" placeholder="Telefone" required />
+                        <div class="checkbox-group">
+                            <strong>Serviços de interesse:</strong>
+                            <label>Design<input type="checkbox" value="Design" /></label>
+                            <label>Gestão de Redes Sociais<input type="checkbox" value="Gestão de Redes Sociais" /></label>
+                            <label>Criação de Site Institucional, E-commerce e Landing Page<input type="checkbox" value="Criação de Sites:%0A       E-commerce %0A       Landing Page" /></label>
+                            <label>Tráfego Pago<input type="checkbox" value="Tráfego Pago" /></label>
+                            <label>Dev Sistema e App<input type="checkbox" value="Desenvolvimento de Sistemas e Apps" /></label>
+                            <label>Consultoria<input type="checkbox" value="Consultoria" /></label>
+                            <label>Marketing Político<input type="checkbox" value="Marketing Político" /></label>
+                        </div>
+                        <button type="submit">Enviar para WhatsApp</button>
+                        <button type="button" class="close-btn" onclick="closePopup()">Fechar</button>
+                    </form>
                 </div>
             </section>
         </article>

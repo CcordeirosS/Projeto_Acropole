@@ -1,0 +1,333 @@
+:root {
+    --cinza: #373737;
+    --verde-escuro: #8db986;
+    --verde-claro: #acce91;
+    --verde-lima: #badb73;
+    --bege: #efeae4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cinza);
+    line-height: 1.6;
+    background-color: var(--bege);
+}
+
+.sec1 {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 55vh;
+}
+
+.sec2 {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.servicos-header {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.servicos-header h1 {
+    color: var(--cinza);
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.servicos-header h2 {
+    color: var(--cinza);
+    font-size: 2rem;
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Navegação entre serviços */
+.servicos-navegacao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.servico-link {
+    padding: 12px 25px;
+    background-color: var(--bege);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--cinza);
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid var(--verde-escuro);
+}
+
+.servico-link:hover,
+.servico-link.ativo {
+    background-color: var(--verde-escuro);
+    color: var(--bege);
+}
+
+/* Páginas de serviços individuais */
+.pagina-servico {
+    background-color: var(--bege);
+    border-radius: 25px;
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: none;
+}
+
+.pagina-servico.ativo {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.servico-titulo {
+    color: var(--verde-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.servico-descricao {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servico-detalhes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.servico-beneficios,
+.servico-processo {
+    background-color: var(--bege);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.servico-beneficios h3,
+.servico-processo h3 {
+    color: var(--verde-lima);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.servico-beneficios h3::before {
+    content: "✓";
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.servico-processo h3::before {
+    content: "➔";
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.servico-beneficios ul,
+.servico-processo ol {
+    padding-left: 25px;
+}
+
+.servico-beneficios li,
+.servico-processo li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.servico-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.servico-btn {
+    display: inline-block;
+    background-color: var(--verde-lima);
+    color: var(--bege);
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(247, 148, 29, 0.3);
+}
+
+.servico-btn:hover {
+    background-color: var(--verde-claro);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(58, 106, 215, 0.3);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .servico-detalhes {
+        grid-template-columns: 1fr;
+    }
+
+    .servicos-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .servicos-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .pagina-servico {
+        padding: 30px 20px;
+    }
+}
+
+/* Barra de navegação */
+.navbar {
+    top: 0;
+    width: 100%;
+    background-color: var(--verde-escuro);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cinza);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Links */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: transform 0.2s ease, color 0.3s ease;
+    position: relative;
+    font-size: large;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.4s forwards;
+}
+
+.nav-links a:hover {
+    cursor: pointer;
+}
+
+.nav-links a:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.nav-links a:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.nav-links a:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-links a:hover {
+    transform: translateY(-3px);
+    color: var(--cinza);
+}
+
+/* Menu hamburguer*/
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: var(--verde-escuro);
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    .nav-links.show {
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .nav-links a {
+        opacity: 1;
+        transform: none;
+        animation: none;
+        padding: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

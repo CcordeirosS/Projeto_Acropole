@@ -1,44 +1,11 @@
-class MobileNavbar {
-    constructor(mobileMenu, navList, navLinks){
-        this.mobileMenu = document.querySelector(mobileMenu);
-        this.navList = document.querySelector(navList);
-        this.navLinks = document.querySelectorAll(navLinks);
-        this.activeClass = "active";
+/* Barra de navegação */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-        this.handleClick = this.handleClick.bind(this);
-    }
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
 
-    animateLinks(){
-        this.navLinks.forEach((link) => {
-            link.style.animation
-                ? (link.style.animation = "")
-                : (link.style.animation = 'navLinkFade 0.5s ease forwards 0.3s');
-        });
-    }
-
-    handleClick(){
-        this.navList.classList.toggle(this.activeClass);
-        this.mobileMenu.classList.toggle(this.activeClass);
-        this.animateLinks();
-    }
-
-    addClickEvent(){
-        this.mobileMenu.addEventListener("click", this.handleClick);
-    }
-
-    init(){
-        if (this.mobileMenu){
-            this.addClickEvent();
-        }
-        return this;
-    }
-}
-
-const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li"
-);
 
 const popup = document.getElementById('popupForm');
 
@@ -49,6 +16,16 @@ function openPopup() {
 function closePopup() {
   popup.style.display = 'none';
 }
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+});
 
 document.getElementById('whatsappForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -61,9 +38,9 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e) {
   let servicos = [];
   checkboxes.forEach(cb => servicos.push(cb.value));
 
-  const mensagem = `Olá, meu nome é ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AEstou interessado nos seguintes serviços:%0A- ${servicos.join('%0A- ')}`;
+  const mensagem = `Olá, meu nome é ${nome}.%0AMeu Email: ${email}%0ATelefone: ${telefone}%0AEstou interessado nos seguintes serviços:%0A- ${servicos.join('%0A- ')}`;
 
-  const numeroWhatsApp = '5599999999999'; // Substitua pelo número com DDD e código do país
+  const numeroWhatsApp = '5592985490996'; // Substitua pelo número com DDD e código do país
   const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
 
   window.open(url, '_blank');
@@ -105,4 +82,27 @@ document.querySelector('.carousel-container').addEventListener('mouseleave', () 
 
 // Iniciar com o primeiro slide
 showSlide(currentIndex);
-mobileNavbar.init();
+
+// Navegação entre serviços
+document.querySelectorAll('.servico-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+                
+    // Remove classe ativo de todos os links
+    document.querySelectorAll('.servico-link').forEach(el => {
+      el.classList.remove('ativo');
+    });
+                
+    // Adiciona classe ativo ao link clicado
+    this.classList.add('ativo');
+                
+    // Esconde todas as páginas de serviço
+    document.querySelectorAll('.pagina-servico').forEach(pagina => {
+      pagina.classList.remove('ativo');
+   });
+                
+    // Mostra a página correspondente
+    const targetId = this.getAttribute('href');
+    document.querySelector(targetId).classList.add('ativo');
+  });
+});
